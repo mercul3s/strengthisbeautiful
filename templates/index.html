@@ -1,34 +1,14 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<!-- WORKOUTS LAYOUT -->
-<div class="thecontainer">
-
-<div class="workoutscontainer">
-<h1>ARMS</h1>
-</div>
-
-<div class="workoutscontainer">
-<h1>CORE</h1>
-</div>
-
-
-<div class="workoutscontainer">
-<h1>LEGS</h1>
-</div>
-
-
-</div>
-
-
-<!-- LANDING PAGE LAYOUT -->
-
- <!--  <div id="thecontainer">
+  <div id="thecontainer">
   <h1>STRENGTH</h1>
   <h1>IS</h1>
   <h1>BEAUTIFUL</h1>  
 
-  <img src="/static/img/strengthmodels.jpg" />
+
+  <a href="{{ url_for('display_videos') }}" method="post"><img src="/static/img/screen-mockup-full.jpg" /></a>
+ 
   <form method='POST' action="{{ url_for('display_videos') }}">
 		<div id="url_input">
 			<div id="submit_button">
@@ -36,6 +16,6 @@
 			</div>
 		</div>
 	</form>
-  </div> -->
+  </div> 
 
-  {% endblock %}
+{% endblock %}
