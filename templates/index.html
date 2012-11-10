@@ -2,17 +2,10 @@
 {% block body %}
 
   <div id="thecontainer">
-  <h1>STRENGTH</h1>
-  <h1>IS</h1>
-  <h1>BEAUTIFUL</h1>  
-
-
-  <a href="{{ url_for('display_videos') }}" method="post"><img src="/static/img/screen-mockup-full.jpg" /></a>
- 
   <form method='POST' action="{{ url_for('display_videos') }}">
 		<div id="url_input">
 			<div id="submit_button">
-				<input type='submit' value = "Start Your Workout">
+				<input type="image" src="/static/img/screen-mockup-full.jpg" alt="submit" width="500px" type='submit'  value = "Start Your Workout">
 			</div>
 		</div>
 	</form>
