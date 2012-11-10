@@ -2,7 +2,7 @@
 
 from apiclient.discovery import build
 from optparse import OptionParser
-import sample_code
+import get_videos
 
 
 if __name__ == "__main__":
