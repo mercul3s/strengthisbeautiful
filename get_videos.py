@@ -19,7 +19,7 @@ def youtube_search(options):
     part="id,snippet",
     maxResults=options.maxResults
   ).execute()
-
+  print options.q
   videos = []
   channels = []
   playlists = []
@@ -51,5 +51,5 @@ if __name__ == "__main__":
   parser.add_option("--max-results", dest="maxResults",
     help="Max results", default=25)
   (options, args) = parser.parse_args()
-
-  youtube_search(options)
+  search_request = 'upper body training women'
+  youtube_search(search_request)
