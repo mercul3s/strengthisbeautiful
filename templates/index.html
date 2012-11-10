@@ -8,6 +8,8 @@
 			</div>
 		</div>
 	</form>
+	<form method='Post' action='{{ url_for(youtube_auth) }}'>
+	</form>
 	<div id="response">
 		{% with messages = get_flashed_messages() %}
 			{% if messages %}
