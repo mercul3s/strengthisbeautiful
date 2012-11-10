@@ -1,7 +1,7 @@
 from flask import Flask, flash, render_template, request, redirect, url_for, session, g
 from optparse import OptionParser
 import os
-import get_videos
+
 
 app = Flask(__name__)
 

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Strength is Beautiful</h1>
+
+<div class="maincontainer">
+<form method='POST' action="{{ url_for('display_videos') }}">
+    <div id="url_input">
+      <div id="submit_button">
+        <input type='submit' value = "Start Your Workout">
+      </div>
+    </div>
+  </form>
+
+
+  <img src="/static/img/glyphicons-halflings.png" />
+</div>
+
+{% endblock %}
