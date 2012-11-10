@@ -1,7 +1,7 @@
 from flask import Flask, flash, render_template, request, redirect, url_for, session, g
 from optparse import OptionParser
 import os
-#import get_videos
+import get_videos
 
 app = Flask(__name__)
 
@@ -25,12 +25,13 @@ def display_videos():
 	#print options
 
 	keyword_search="code training women"
-	options= None
+	options = ""
 	videos = get_videos.youtube_search(options, keyword_search)
 	print videos
 	for item in videos:	
 		print item
 		flash(item)
+	return redirect('/')
 		
 # @app.route('/youtube_auth')
 # # def youtube_auth():
