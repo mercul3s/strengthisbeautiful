@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 {% extends "layout.html" %}
 {% block body %}
 <h2>Strength Is Beautiful</h2>
-	<form method='POST' action="{{ url_for('display_videos') }}">
-		<div id="url_input">
-			<div id="submit_button">
-				<input type='submit' value = "Start Your Workout">
-			</div>
-		</div>
-	</form>
-=======
 <!-- Rename to Exercises -->
 {% extends "layout.html" %}
 {% block body %}
@@ -20,8 +11,13 @@
   <h1>BEAUTIFUL</h1>  
 
   <img src="/static/img/strengthmodels.jpg" />
+  <form method='POST' action="{{ url_for('display_videos') }}">
+		<div id="url_input">
+			<div id="submit_button">
+				<input type='submit' value = "Start Your Workout">
+			</div>
+		</div>
+	</form>
   </div>
 
-  
->>>>>>> bc5fd75465347bcb5fa6ded149bde63e8c5e9225
-{% endblock %}
+  {% endblock %}
