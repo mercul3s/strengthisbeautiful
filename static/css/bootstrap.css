@@ -1,4 +1,4 @@
-/*!
+/*/*!
  * Bootstrap v2.2.1
  *
  * Copyright 2012 Twitter, Inc
@@ -684,6 +684,7 @@ h1 {
 
 h2 {
   font-size: 31.5px;
+  color: red;
 }
 
 h3 {
