@@ -1,4 +1,12 @@
-.maincontainer {
-  border: solid 2px red;
+#thecontainer {
+  border: solid pink;
   margin: 0px auto;
+  width: 686px;
+}
+
+#thecontainer, h1 {
+  font-size: 50px;
+  margin: 20px auto;
+  padding: 10px auto;
+  text-align: center;
 }
