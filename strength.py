@@ -10,13 +10,21 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
-@app.route('/display_videos', methods=["POST"])
+@app.route('/work_outs', methods=['GET'])
+def work_out():
+	return render_template('workouts.html')
+
+@app.route('/display_videos', methods=["POST", "GET"])
 def display_videos():
-	keyword_search="code training women"
-	options = ""
-	videos = get_videos.youtube_search(options, keyword_search)
-	print videos
-	return render_template('exercises.html', videos = videos)
+	if request.method == "POST":
+		keyword_search="code training women"
+		options = ""
+		videos = get_videos.youtube_search(options, keyword_search)
+		print videos
+		return render_template('exercises.html', videos = videos)	
+	if request.method == "GET":
+		return redirect('/exercises')
+	
 
 @app.route('/exercises', methods=['GET'])
 def exercises(videos):
@@ -25,6 +33,7 @@ def exercises(videos):
 			flash(item)
 	return redirect('/exercises')
 	#return render_template('exercises.html')
+
 
 		
 # @app.route('/youtube_auth')
