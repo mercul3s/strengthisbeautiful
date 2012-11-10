@@ -1,6 +1,7 @@
 from flask import Flask, flash, render_template, request, redirect, url_for, session, g
 from optparse import OptionParser
 import os
+import get_videos
 
 
 app = Flask(__name__)
@@ -15,14 +16,15 @@ def display_videos():
 	options = ""
 	videos = get_videos.youtube_search(options, keyword_search)
 	print videos
-	return redirect('/exercises')
+	return render_template('exercises.html', videos = videos)
 
 @app.route('/exercises', methods=['GET'])
-def exercises():
-	print "in exercises"
-	# for item in videos:	
-	# 	flash(item)
-	return render_template('exercises.html')
+def exercises(videos):
+	if videos:
+		for item in videos:	
+			flash(item)
+	return redirect('/exercises')
+	#return render_template('exercises.html')
 
 		
 # @app.route('/youtube_auth')
