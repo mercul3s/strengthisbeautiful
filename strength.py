@@ -1,6 +1,8 @@
 from flask import Flask, flash, render_template, request, redirect, url_for, session, g
-import use_search
+from optparse import OptionParser
 import os
+#import get_videos
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,14 +15,20 @@ def login():
 
 @app.route('/display_videos', methods=["POST"])
 def display_videos():
-	videos = use_search.get_results()
-	# url = request.form['url']
-	# # this function call verifies that the url entered has a tld and protocol
-	# formatted_url = core.check_input(url)
-	# status = core.get_http_status(url)
-	# # only use message flashing for error messages. These values should be stored
-	# # and read from a database.
+
+	parser = OptionParser()
+	parser.add_option("--q", dest="q", help="Search term",
+	    default="Google")
+	parser.add_option("--max-results", dest="maxResults",
+	    help="Max results", default=25)
+	(options, args) = parser.parse_args()
+	print options
+
+	keyword_search="code training women"
+	videos = get_videos.youtube_search(options, keyword_search)
+	print videos
 	for item in videos:	
+		print item
 		flash(item)
 	return redirect('/')
 		

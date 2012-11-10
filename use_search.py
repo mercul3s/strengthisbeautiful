@@ -12,7 +12,7 @@ def get_results():
 	parser.add_option("--max-results", dest="maxResults",
 	help="Max results", default=25)
 	(options, args) = parser.parse_args()
-	results= get_videos.youtube_search(options)
+	results= get_videos.youtube_search(options, keyword_search="code training women")
 	return results
 
 # if __name__ == "__main__":
