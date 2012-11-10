@@ -15,8 +15,8 @@ def get_results():
 	results= get_videos.youtube_search(options)
 	return results
 
-if __name__ == "__main__":
-	get_results()
+# if __name__ == "__main__":
+# 	get_results()
 
 # print results, type(results)  # unicode results 
 # list_results= list(results)  # listify results  
