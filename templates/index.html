@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>Strength Is Beautiful</h2>
+	<form method='POST' action="{{ url_for('display_videos') }}">
+		<div id="url_input">
+			<div id="submit_button">
+				<input type='submit' value = "Start Your Workout">
+			</div>
+		</div>
+	</form>
+{% endblock %}

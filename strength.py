@@ -9,29 +9,21 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
-@app.route('/login')
-def login():
-	return render_template('login.html')
-
 @app.route('/display_videos', methods=["POST"])
 def display_videos():
-
-	# parser = OptionParser()
-	# parser.add_option("--q", dest="q", help="Search term",
-	#     default="Google")
-	# parser.add_option("--max-results", dest="maxResults",
-	#     help="Max results", default=25)
-	# (options, args) = parser.parse_args()
-	#print options
-
 	keyword_search="code training women"
 	options = ""
 	videos = get_videos.youtube_search(options, keyword_search)
 	print videos
-	for item in videos:	
-		print item
-		flash(item)
-	return redirect('/')
+	return redirect('/exercises')
+
+@app.route('/exercises', methods=['GET'])
+def exercises():
+	print "in exercises"
+	# for item in videos:	
+	# 	flash(item)
+	return render_template('exercises.html')
+
 		
 # @app.route('/youtube_auth')
 # # def youtube_auth():
