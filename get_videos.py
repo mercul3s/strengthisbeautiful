@@ -18,8 +18,8 @@ def youtube_search(options, query):
     # q=options.q,
     q=query, 
     part="id,snippet",
-    maxResults=options.maxResults
-  ).execute()
+    maxResults= 5
+).execute()
 
   videos = []
   channels = []
@@ -60,4 +60,4 @@ def youtube_search(options, query):
 
 # Change the keyword search to change the search results. 
 keyword_search="code training women"
-youtube_search(options,  keyword_search)
+#youtube_search(options,  keyword_search)

@@ -1,7 +1,7 @@
 from flask import Flask, flash, render_template, request, redirect, url_for, session, g
 from optparse import OptionParser
 import os
-#import get_videos
+import get_videos
 
 app = Flask(__name__)
 
@@ -16,15 +16,16 @@ def login():
 @app.route('/display_videos', methods=["POST"])
 def display_videos():
 
-	parser = OptionParser()
-	parser.add_option("--q", dest="q", help="Search term",
-	    default="Google")
-	parser.add_option("--max-results", dest="maxResults",
-	    help="Max results", default=25)
-	(options, args) = parser.parse_args()
-	print options
+	# parser = OptionParser()
+	# parser.add_option("--q", dest="q", help="Search term",
+	#     default="Google")
+	# parser.add_option("--max-results", dest="maxResults",
+	#     help="Max results", default=25)
+	# (options, args) = parser.parse_args()
+	#print options
 
 	keyword_search="code training women"
+	options = ""
 	videos = get_videos.youtube_search(options, keyword_search)
 	print videos
 	for item in videos:	
