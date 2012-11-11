@@ -16,3 +16,8 @@
   border: solid pink 1px;  
   vertical-align: middle;
 }
+
+.navigationbuttons {
+  margin-top: 75px;
+  text-align: left;
+}

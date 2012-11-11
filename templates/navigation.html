@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style>
+body {
+  background-color: #141414;
+  background: url('static/img/bigimage_armscorelegs.png');
+  margin-right: 85px; 
+}
+</style>
+
+<!--ARMS-->
+<div class="navigationbuttons">
+  <form method='POST' action="{{ url_for('display_videos') }}">
+    <div id="url_input">
+      <div id="submit_button">
+        <input type="image" src="/static/img/workout_armstext_selected.png" alt="submit" type='submit' value = "Start Your Workout">
+      </div>
+    </div>
+  </form>
+  </div>  
+
+
+<!--CORE-->
+<div class="navigationbuttons">
+  <form method='POST' action="{{ url_for('display_core_vids') }}">
+    <div id="url_input">
+      <div id="submit_button">
+        <input type="image" src="/static/img/workout_coretext_selected.png" alt="submit" type='submit' value = "Start Your Workout">
+      </div>
+    </div>
+  </form>
+  </div>  
+
+
+<!--LEGS-->
+  <div class="navigationbuttons">
+  <form method='POST' action="{{ url_for('display_leg_vids') }}">
+    <div id="url_input">
+      <div id="submit_button">
+        <input type="image" src="/static/img/workout_legstext_selected.png" alt="submit" type='submit' value = "Start Your Workout">
+      </div>
+    </div>
+  </form>
+  </div>  
+
+{% endblock %}

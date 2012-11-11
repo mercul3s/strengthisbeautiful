@@ -14,20 +14,21 @@ def index():
 def work_out():
 	return render_template('workouts.html')
 
-@app.route('/display_videos', methods=["GET"])
+@app.route('/display_videos', methods=["POST"])
 def display_videos():
-	if request.method == "GET":
-		return redirect('/arm_results')
+	return redirect('/arm_results')
 
-@app.route('/display_core_vids', methods=["GET"])
-def display_core_vids():
-	if request.method == "GET":
-		return redirect('/core_results')
+@app.route('/navigation', methods=["GET"])
+def navigation():
+		return render_template('navigation.html')
 
-@app.route('/display_leg_vids', methods=["GET"])
+@app.route('/display_core_vids', methods=["POST"])
 def display_core_vids():
-	if request.method == "GET":
-		return redirect('/leg_results')
+	return redirect('/core_results')
+
+@app.route('/display_leg_vids', methods=["POST"])
+def display_leg_vids():
+	return redirect('/leg_results')
 
 @app.route('/arm_results', methods=["GET"])
 def arm_results(): 
