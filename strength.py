@@ -14,28 +14,45 @@ def index():
 def work_out():
 	return render_template('workouts.html')
 
-@app.route('/display_videos', methods=["POST", "GET"])
+@app.route('/display_videos', methods=["GET"])
 def display_videos():
-	if request.method == "POST":
-		keyword_search="code training women"
-		options = ""
-		videos = get_videos.youtube_search(options, keyword_search)
-		print videos
-		return render_template('exercises.html', videos = videos)	
 	if request.method == "GET":
-		return redirect('/exercises')
-	
+		return redirect('/arm_results')
 
-@app.route('/exercises', methods=['GET'])
-def exercises(videos):
-	if videos:
-		for item in videos:	
-			flash(item)
-	return redirect('/exercises')
-	#return render_template('exercises.html')
+@app.route('/display_core_vids', methods=["GET"])
+def display_core_vids():
+	if request.method == "GET":
+		return redirect('/core_results')
 
+@app.route('/display_leg_vids', methods=["GET"])
+def display_core_vids():
+	if request.method == "GET":
+		return redirect('/leg_results')
 
-		
+@app.route('/arm_results', methods=["GET"])
+def arm_results(): 
+	videos =[]  
+	keyword_search="arms training women"
+	options = ""
+	videos = get_videos.youtube_search(options, keyword_search)
+	return render_template('specific_results.html', videos = videos)
+
+@app.route('/core_results', methods=["GET"])
+def core_results(): 
+	videos =[]  
+	keyword_search="core training women"
+	options = ""
+	videos = get_videos.youtube_search(options, keyword_search)
+	return render_template('specific_results.html', videos = videos)
+
+@app.route('/leg_results', methods=["GET"])
+def leg_results(): 
+	videos =[]  
+	keyword_search="leg training women"
+	options = ""
+	videos = get_videos.youtube_search(options, keyword_search)
+	return render_template('specific_results.html', videos = videos)
+
 # @app.route('/youtube_auth')
 # # def youtube_auth():
 # # 	return redirect("https://accounts.google.com/o/oauth2/auth?",
@@ -44,10 +61,6 @@ def exercises(videos):
 # #   	scope=https://gdata.youtube.com&,
 # #   	response_type=code&,
 # #   	access_type=offline)
-
-@app.route('/test_page')
-def test_page():
-	return render_template('test_page.html')
 
 app.secret_key = '(Faulties}Marinating[Ballin'
 
