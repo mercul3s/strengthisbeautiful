@@ -36,7 +36,7 @@ def arm_results():
 	keyword_search="arms training women"
 	options = ""
 	videos = get_videos.youtube_search(options, keyword_search)
-	return render_template('specific_results.html', videos = videos)
+	return render_template('specific_results.html', videos = videos, heading = "Arm Exercises")
 
 @app.route('/core_results', methods=["GET"])
 def core_results(): 
@@ -44,7 +44,7 @@ def core_results():
 	keyword_search="core training women"
 	options = ""
 	videos = get_videos.youtube_search(options, keyword_search)
-	return render_template('specific_results.html', videos = videos)
+	return render_template('specific_results.html', videos = videos, heading = "Core Exercises")
 
 @app.route('/leg_results', methods=["GET"])
 def leg_results(): 
@@ -52,7 +52,7 @@ def leg_results():
 	keyword_search="leg training women"
 	options = ""
 	videos = get_videos.youtube_search(options, keyword_search)
-	return render_template('specific_results.html', videos = videos)
+	return render_template('specific_results.html', videos = videos, heading = "Leg Exercises")
 
 # @app.route('/youtube_auth')
 # # def youtube_auth():
