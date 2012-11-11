@@ -1,3 +1,12 @@
+h1, p {
+  color: #141414;
+}
+
+h2 {
+  color: #24C0EB;
+}
+
+
 #thecontainer {
   margin: 0px auto;
   margin-top: -120px;
@@ -18,6 +27,7 @@
 }
 
 .navigationbuttons {
-  margin-top: 75px;
   text-align: left;
+  
 }
+
